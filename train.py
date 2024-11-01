@@ -167,6 +167,7 @@ def main():
                     data_loader_train_plain,
                     data_loader_val_plain,
                 )
+                print(f"KNN accuracy: {current_acc}/{best_acc}")
                 writer.add_scalar("knn-accuracy", current_acc, n_steps)
                 if current_acc > best_acc:
                     torch.save(student, logging_path / "best_model.pth")
